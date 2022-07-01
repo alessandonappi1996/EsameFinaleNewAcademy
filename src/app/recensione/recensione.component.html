@@ -1,0 +1,24 @@
+<a class="nav-link btn btn-success mt-5 ms-5 mb-4 text-white" [routerLink]="['/recensione/nuovoRecensione']" style="width: 15%;">Nuova Recensione</a>
+
+
+<p-table [value]="recensioni" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Testo</th>
+            <th>Articolo</th>
+        
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-recensione>
+        <tr>
+            <td>{{recensione.id}}</td>
+            <td>{{recensione.testo}}</td>
+            <td>{{recensione.articolo.nome}}</td>
+            <td><button pButton pRipple type="button" icon="pi pi-times" class="btn btn-warning mt-2" (click)="updateRecensione(recensione.id)">Modifica</button></td>
+
+            <td><button pButton pRipple type="button" icon="pi pi-times" class="btn btn-danger mt-2" (click)="deleteRecensione(recensione.id)">X</button></td>
+        </tr>
+    </ng-template>
+</p-table>
+

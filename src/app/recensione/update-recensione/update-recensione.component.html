@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row mt-2">
+      <div div class="col-12 text mt-5 card shadow">
+        <h4 class="my-4 ml-2 fw-bold">Modifica la Recensione</h4>
+        <p class="text-secondary ml-2">Compila il form per modificare la recensione</p>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+          <div class="row ml-1 mr-1 mb-1">
+            <div class="col-12 md:col-4">
+              <div class="p-fluid">
+                <h6 >Testo</h6>
+                <input type="text" pInputText formControlName="testo" class="form-control" class="p-inputtext-sm">
+                <p class="text-secondary ml-1 small">Inserire il testo della recensione</p>
+                <span class="ml-2"></span>
+              </div>
+            </div>
+  
+            
+            <div class="col-12 md:col-4">
+                <div class="p-fluid">
+                  <h6>Articoli</h6>
+                  <p-dropdown  [autoDisplayFirst]="false" formControlName="idarticolo"   class="p-inputtext-sm" [options]="articoli"  optionLabel="nome"></p-dropdown>
+             
+                  <span class="ml-2"></span>
+                </div>
+              </div>
+  
+          </div>
+  
+        
+         
+         
+  
+                
+            
+          <div class="row  ">
+  
+            <div class="col-lg-2 mt-5">
+              <div class="d-grid">
+                <div class="button btn btn-danger ml-1"(click)="goBack()" >Annulla</div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-3 mt-5" style="float:right;">
+              <div class="d-grid">
+                <button class="btn btn-primary  ml-1">Modifica recensione</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  
+  </div> 
